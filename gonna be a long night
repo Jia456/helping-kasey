@@ -33,7 +33,7 @@ public class PasswordGuessing
          boolean win = false;
       
           while (win == false) {
-       
+
            System.out.println("Guess the password. ");
            guess = scan.nextInt();
       
@@ -46,19 +46,23 @@ public class PasswordGuessing
          }
          else if (guess < password) {
             System.out.println("Your guess is too low! Try Again!");
+            import java.util.Random;
+
          }
+         AROUND HERE
+         ALSO ADD THE IF STATMENT HERE TOO
          }
          System.out.println("You guess correctly!");
          System.out.println("The password was " + password);
-        
+THIS WHOLE SECTION SHOULD GO UP
         if (tries == 1){
              System.out.println(hint[0]);
              System.out.println(hint[3]);                   
            }
-         else if (tries == 2){
+         else if (tries == 2){  
             System.out.println(hint[1]);
             System.out.println(hint[2]);                   
           }
-         
+     XZXXXXXXXXXXXXXXXXXXXXXXXXX    
   } 
 }
