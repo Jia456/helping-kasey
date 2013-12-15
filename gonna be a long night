@@ -1,0 +1,64 @@
+import java.util.Random;
+import java.util.Scanner;
+public class PasswordGuessing
+{
+  public static void main ( String[] args )
+  {
+    Scanner scan = new Scanner( System.in );
+    Random random = new Random();  
+    int password = random.nextInt(10000);
+    int tries = 10;
+     int ones,tens,hundreds, thousands;
+     String [] hint;
+        ones = password%10;
+        tens = password%100;
+        tens = tens/10;
+        hundreds = password%1000;
+        hundreds = hundreds/100;
+        thousands= password%10000;
+        thousands= thousands/1000;
+        hint = new String[4];
+        hint[0] = "The number in the ones is: " + (ones);
+        hint[1] = "The number in the tens is: " + (tens);
+        hint[2] = "The number in the hundreds is: " + (hundreds);
+        hint[3] = "The number in the thousands: " + (thousands);
+
+        System.out.println("Frozen Again Password Guessing Game");
+        System.out.println("Directions:");
+        System.out.println("1. It's Four(4) digits.");
+        System.out.println("2. You can only guess three times.");
+        System.out.println("3. Hints will be given after each guess.");
+        int guess;
+        
+         boolean win = false;
+      
+          while (win == false) {
+       
+           System.out.println("Guess the password. ");
+           guess = scan.nextInt();
+      
+          if (guess == password){
+            win = true;
+          }
+         else if (guess > password){
+            System.out.println("Your guess is too high! Try Again!");
+       
+         }
+         else if (guess < password) {
+            System.out.println("Your guess is too low! Try Again!");
+         }
+         }
+         System.out.println("You guess correctly!");
+         System.out.println("The password was " + password);
+        
+        if (tries == 1){
+             System.out.println(hint[0]);
+             System.out.println(hint[3]);                   
+           }
+         else if (tries == 2){
+            System.out.println(hint[1]);
+            System.out.println(hint[2]);                   
+          }
+         
+  } 
+}
